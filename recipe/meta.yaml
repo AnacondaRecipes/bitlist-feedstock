@@ -1,0 +1,48 @@
+{% set name = "bitlist" %}
+{% set version = "1.2.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: fbfac19e8f8e1fbc8488de0af550ba04210fb8ebfc9cda74854f9f59e823a8fc
+
+build:
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+  number: 0
+
+requirements:
+  host:
+    - python
+    - setuptools
+    - pip
+    - wheel
+  run:
+    - python
+    - parts >=1.7,<2.dev0
+
+test:
+  imports:
+    - bitlist
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/lapets/bitlist
+  license: MIT
+  license_file: LICENSE
+  license_family: MIT
+  summary: Pure-Python library for working with bit vectors.
+  description: |
+    This library allows programmers to work with bit vectors using a pure-Python data structure. Its design prioritizes
+    interoperability with built-in Python classes and operators.
+  doc_url: https://bitlist.readthedocs.io/en/1.2.0/
+  dev_url: https://github.com/lapets/bitlist
+
+extra:
+  recipe-maintainers:
+    - boldorider4
