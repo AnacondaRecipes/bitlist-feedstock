@@ -40,7 +40,7 @@ about:
   description: |
     This library allows programmers to work with bit vectors using a pure-Python data structure. Its design prioritizes
     interoperability with built-in Python classes and operators.
-  doc_url: https://github.com/lapets/bitlist/blob/main/README.rst
+  doc_url: https://bitlist.readthedocs.io/en/1.2.0/
   dev_url: https://github.com/lapets/bitlist
 
 extra:
