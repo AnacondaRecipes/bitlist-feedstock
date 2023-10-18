@@ -18,6 +18,7 @@ requirements:
     - python
     - setuptools
     - pip
+    - wheel
   run:
     - python
     - parts >=1.7,<2.dev0
